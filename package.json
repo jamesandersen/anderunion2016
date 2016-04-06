@@ -40,7 +40,7 @@
   },
   "dependencies": {
     "es6-promise": "^3.0.2",
-    "es6-shim": "^0.33.3"
+    "es6-shim": "^0.35"
   },
   "devDependencies": {
     "compression-webpack-plugin": "^0.3.1",
