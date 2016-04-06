@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+   <title>
+      <%= webpackConfig.metadata.title %>
+   </title>
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="description" content="<%= webpackConfig.metadata.title %>">
+
+   <!-- base url -->
+   <base href="<%= webpackConfig.metadata.baseUrl %>">
+</head>
+
+<body>
+   <div><header>
+      <%= webpackConfig.metadata.title %>
+   </header></div>
+   
+   <div class="day">
+      <h2>Friday July 1, 2016</h3>
+      <p></p>
+      <ul>
+         <li>3:30 Gather at Lions Park
+            
+            <h3>Responsibilities</h3>
+            <ul>
+               <li>Meat, buns, plasticwear,drinks: burgers (Reunion Fund) </li>
+               <li>Condiments and Chips: Eric Andersens</li>
+               <li>Salads/Sides: Steve Andersen and Lisa Thomas Families</li>
+               <li>Desserts: Roger Andersens</li>
+               <li>Set Up: Brad Andersens</li>
+               <li>Clean Up: Dave Andersens</li>
+            </ul> 
+         </li>
+         <li>5:30 Dinner (91 people, 58 adults, 33 children)</li>
+         <li>9:30 Wind down and clean up</li>
+      </ul>
+   </div>
+   <div class="day">
+      <h2>Saturday July 2, 2016</h3>
+      <ul>
+         <li>9:00 - 11:00am Hike: Battle Creek Falls
+            <p>The trailhead is easy to find. From the town of Pleasant Grove, just follow 200 S to the east side of town. The street is also known as Battle Creek Drive and it dead-ends at the trailhead.
+               Get details on this hike hike good for anyone
+               done by lunch time.. 11:00ish</p>
+            <h3>Responsibilities</h3>
+            <ul>
+               <li>Snacks: Brad Andersens</li>
+            </ul> 
+         </li>
+         <li>5:30-7:00 Catered Dinner at Shaunas (91 people, 58 adults, 33 children)
+            <p>Bring a blanket or chairs if you have/want them.</p>
+            <h3>Responsibilities</h3>
+            <ul>
+               <li>Set up : Roger Andersen Family</li>
+               <li>Desserts/movie snacks : Dave Andersen</li>
+               <li>Clean up: Eric and Brad Andersen Family</li>
+            </ul> 
+         </li>
+         <li>7:30 - 8:30 Talent Show
+            <p>Bring a blanket or chairs if you have/want them.</p>
+         </li>
+         <li>9:00ish, movie showing outside with popcorn
+            <p>Younger kids may want to bail out...</p>
+         </li>
+      </ul>
+   </div>
+      <div class="day">
+      <h2>Sunday July 3, 2016</h3>
+      <ul>
+         <li>9:00 - 11:00am Church
+            <p>Anyone looking for a place to attend church is welcome at The XXXXX Ward with Lisa, Rebecca, etc.</p>
+         </li>
+      </ul>
+   </div>
+
+   <% if (webpackConfig.metadata.ENV === 'development') { %>
+      <!-- Webpack Dev Server reload -->
+      <script src="http://<%= webpackConfig.metadata.host %>:<%= webpackConfig.metadata.port %>/webpack-dev-server.js"></script>
+      <% } %>
+</body>
+
+</html>
