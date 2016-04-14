@@ -61,7 +61,7 @@ module.exports = helpers.defaults({
       // This is for global styles
       { test: /styles\.less$/, loader: ExtractTextPlugin.extract("style-loader", "css-loader!less-loader") },
       
-      { test: /\.png$/,  loader: "file-loader?name=assets/img/[name].[ext]?[hash]" },
+      { test: /(\.png|\.jpg)$/,  loader: "file-loader?name=assets/img/[name].[ext]?[hash]" },
       
       { test: /\.less$/,  loader: "raw!less", exclude: [ helpers.root('src/styles.less')] }
     ]

@@ -1,5 +1,8 @@
-@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400);
 @import url(http://fonts.googleapis.com/css?family=Shadows+Into+Light);
+
+@body-bg: #FEFEFA;
+@header-height: 2rem;
 
 html {
   font-family: sans-serif; /* 1 */
@@ -12,8 +15,14 @@ html {
 
 body {
   margin: 0;
-  padding: 2rem 8px 8px 8px;
-  background: lightgray;
+  padding: 500px 0px 8px 0px;
+  background-color: @body-bg;
+  
+  background-image: url(./assets/img/markmil-min.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 50% @header-height;
+  background-attachment: fixed;
 }
 
 article,
@@ -31,17 +40,53 @@ summary { /* 1 */
   display: block;
 }
 
-header, h2 {
+header, h2, h3, h4 {
    font-family: 'Open Sans';
+   font-weight: 300;
 }
 
 header { 
    font-size: 2rem; 
    position: fixed;
    top: 0px;
+   left: 0px;
+   right: 0px;
+   background: @body-bg;
+   text-align: center;
+   padding: 8px;
+   
+   &.docked {
+      box-shadow: 0px 1px 12px 0px rgba(153,153,153,0.88);
+   }
 }
 
 h2 { font-size: 1.4rem; }
+
+.day {
+   background: fadeout(@body-bg, 10%);
+   padding: 8px 16px;
+   h3 { margin-bottom: 0px; }
+   h2 {
+      font-family: 'Open Sans';
+      font-size: 2rem;
+      margin: 0px;
+   }
+   
+   h4 {
+      font-weight: 400;
+      margin: 0px;
+   }
+   
+   .schedule, .responsibilities {
+      width: 48%;
+      display: inline-block;
+      vertical-align: top;
+   }
+   
+   ul {
+      list-style: none;
+   }
+}
 
 /* 480px */
  @media only screen and (min-width: 480px) {
