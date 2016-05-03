@@ -173,11 +173,10 @@ module.exports = helpers.defaults({
 
     }),
    // include uglify in production
-   /*new CompressionPlugin({
-      algorithm: helpers.gzipMaxLevel,
+   new CompressionPlugin({
       regExp: /\.css$|\.html$|\.js$|\.map$/,
       threshold: 2 * 1024
-    })*/
+    })
   ],
   // Other module loader config
   tslint: {

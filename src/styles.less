@@ -15,8 +15,10 @@ summary { /* 1 */
   display: block;
 }
 
-@body-bg: #777;
-@content-bg: rgb(236, 236, 232);
+@body-bg: #64706c;
+@content-bg: #c7ad88;;
+@text-accent: #935347;
+@text-fg: black;
 @content-width: 90%;
 @max-content-width: 800px;
 @header-height: 2rem;
@@ -35,12 +37,12 @@ body {
   padding: 1rem 0px 8px 0px;
   background-color: @body-bg;
   position: relative;
-  background-image: url(./assets/img/markmil-min.jpg);
-  background-size: contain;
+  background-image: url(./assets/img/anderfam.jpg);
+  background-size: 100%;
   background-repeat: no-repeat;
-  background-position: 50% 0px;
+  background-position: 50% 0%;
   background-attachment: fixed;
-  background-blend-mode: multiply, normal;
+  background-blend-mode: multiply;
   
   &:before, &:after {
     content: '';
@@ -62,25 +64,26 @@ body {
 
 header, h2, h3, h4, div.masthead {
    font-family: 'Open Sans';
-   font-weight: 400;
+   font-weight: 300;
 }
 
 .masthead {
   width: @content-width;
   max-width: @max-content-width;
   text-align: center;
-  margin: 4rem auto;
+  margin: 1.8rem auto;
   padding: 1rem;
-  font-size: 4rem;
-  text-shadow: 0px 2px 1px #FEFEFA;
-  background: rgba(225, 225, 225, 0.6);
-  box-shadow: 0px 0px 50px @body-bg inset;
-  border: 2px solid @body-bg;
+  font-size: 1.8rem;
+  font-weight: 300;
+  color: white;
+  text-shadow: 0px 2px 1px darken(@text-accent, 25);
+  background: fadeout(@body-bg, 50);
+  //box-shadow: 0px 0px 50px darken(@body-bg, 30);
+  //border: 2px solid @body-bg;
   box-sizing: border-box;
   
   p { margin-top: 1rem; margin-bottom: 0.25rem; }
-  .date { font-size: 2rem; margin-top: 0; }
-  
+  .date { font-size: 1.2rem; margin-top: 0; }
 }
 
 header, h2, h3, h4 {
@@ -104,8 +107,6 @@ header {
    &.docked {
      margin-top: 0px;
    }
-   
-   
 }
 
 div.menu {
@@ -118,7 +119,7 @@ div.menu {
     position: absolute;
     right: -1px;
     top: 43px;
-    background: @body-bg;
+    background: @content-bg;
     border: 1px solid #888;
     border-radius: 8px 0px 8px 8px;
     overflow: hidden;
@@ -136,8 +137,6 @@ div.menu {
     border: 1px solid #888;
     border-bottom-color: @body-bg;
     border-radius: 8px 8px 0px 0px;
-    
-    
     
     .container {
       opacity: 1;
@@ -164,36 +163,62 @@ div.day {
    background: fadeout(@content-bg, 5%);
    width: @content-width;
    max-width: @max-content-width;
-   box-shadow: 2px 2px 10px #888;
+   box-shadow: 2px 2px 10px darken(@body-bg, 30);
    box-sizing: border-box;
    margin: 1rem auto;
    padding: 8px 16px;
+   overflow: hidden;
+   
    &:last-of-type {
      margin-bottom: 10rem;
    }
    
-   h3 { margin-bottom: 0px; }
+   h3 { 
+     margin-bottom: 0px; 
+     font-size: 1rem;
+   }
+   
    h2 {
       font-family: 'Open Sans';
-      font-size: 2rem;
-      margin: 0px;
+      font-size: 1.2rem;
+      background: @text-accent;
+      border: 1px solid darken(@text-accent, 40);
+      border-width: 1px 0px;
+      color: white;
+      margin: 3px -16px;
+      padding: 6px;
+     clear: both;
    }
    
    h4 {
       font-weight: 400;
       margin: 0px;
-   }
-   
-   .schedule, .responsibilities {
-      width: 48%;
-      display: inline-block;
-      vertical-align: top;
+      border-bottom: 1px solid @text-fg;
    }
    
    ul {
       list-style: none;
+      padding-left: .25rem;
+      
+      li {
+        margin-left: 2.4rem;
+        text-indent: -2.4rem;
+        span {
+          font-weight: bold;
+        }
+      } 
    }
 }
+   
+.schedule, .responsibilities, .event-img, .event-qr {
+  width: 100%;
+  display: inline-block;
+  vertical-align: top;
+  padding-right: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.event-qr { display: none; }
 
 body.steve { li:not(.steve) { display: none; } }
 body.eric { li:not(.eric) { display: none; } }
@@ -202,12 +227,69 @@ body.dave { li:not(.dave) { display: none; } }
 body.lisa { li:not(.lisa) { display: none; } }
 body.roger { li:not(.roger) { display: none; } }
 
+.event-img, .event-qr {
+  box-sizing: border-box;
+  max-width: 400px;
+  max-height: 400px;
+  div.img {
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    
+    .link {
+      float: right;
+      top: 0px;
+      right: 0px;
+      font-size: 46px;
+      background-color: rgba(0, 0, 200, 0.5);
+      width: 42px;
+      height: 42px;
+      line-height: 32px;
+      color: white;
+      text-align: center;
+      vertical-align: middle;
+      border-radius: 0px 0px 0px 10px;
+    }
+  }
+  
+  
+}
 
 /* 480px */
  @media only screen and (min-width: 480px) {
+    .masthead {
+      font-size: 3rem;
+      margin: 3rem auto;
+      .date { font-size: 1.6rem }
+    }
     
+    div.day {
+      h2 { font-size: 1.6rem; }
+    }
+    
+    .event-img, .event-qr, .schedule, .responsibilities { width: 46%; }
+    .event-img { float: left; }
+}
+
+/* 768px */
+ @media only screen and (min-width: 768px) {
+    .masthead {
+      margin: 4rem auto;
+      font-size: 4rem;
+      .date { font-size: 2rem }
+    }
+    
+    div.day {
+      h2 { font-size: 2rem; }
+    }
+    
+    .event-img, .event-qr, .schedule, .responsibilities { width: 30%; }
 }
 
 @media print {
-
+  .event-img, header { display: none; }
+  .event-qr { display: block; }
 }
