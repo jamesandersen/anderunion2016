@@ -16,8 +16,9 @@ summary { /* 1 */
 }
 
 @body-bg: #c9c9c9;
+@menu-bg: #222;
 @content-bg: #e3e3e3;
-@text-accent: #9ad3de;
+@text-accent: #6a93fe;
 @text-fg: black;
 @content-width: 90%;
 @max-content-width: 800px;
@@ -67,6 +68,11 @@ header, h2, h3, h4, div.masthead {
    font-weight: 300;
 }
 
+a, a:visited {
+  color: @text-accent;
+  text-decoration: none;
+}
+
 .masthead {
   width: @content-width;
   max-width: @max-content-width;
@@ -78,15 +84,13 @@ header, h2, h3, h4, div.masthead {
   color: white;
   text-shadow: 0px 1px 2px darken(@text-fg, 25);
   background: fadeout(@body-bg, 50);
-  //box-shadow: 0px 0px 50px darken(@body-bg, 30);
-  //border: 2px solid @body-bg;
   box-sizing: border-box;
   
   p { margin-top: 1rem; margin-bottom: 0.25rem; }
   .date { font-size: 1.2rem; margin-top: 0; }
 }
 
-header, h2, h3, h4 {
+header, h2, h3, h4, .menu-panel, .header {
    font-family: 'Open Sans';
    font-weight: 300;
 }
@@ -111,50 +115,68 @@ header {
 
 div.menu {
   float: right;
-  position: relative;
-  
+  font-size: 1.8rem;
+  margin-right: 1rem;
+  cursor: pointer;
   .button { padding: 2px 6px; }
   
-  .container {
-    position: absolute;
-    right: -1px;
-    top: 43px;
-    background: @content-bg;
-    border: 1px solid #888;
-    border-radius: 8px 0px 8px 8px;
-    overflow: hidden;
-    max-height: 0;
-    width: 225px;
-    opacity: 0;
-    padding: 1rem;
-    z-index: -1;
-    box-shadow: 2px 2px 6px #888;
-    
-    transition: all 0.5s ease-out;
-  }
-  
-  &.open {
-    border: 1px solid #888;
-    border-bottom-color: @body-bg;
-    border-radius: 8px 8px 0px 0px;
-    
-    .container {
-      opacity: 1;
-      max-height: 300px;
-    }
-  }
-  
-  .options {
-    font-size: 1rem;
-    text-align: left;
-  }
-  
-  label {
-    display: block;
-    padding: 0.2rem;
-    input { margin-right: 0.5rem; }
-  }
+  &.up { margin-top: -8px; }
 }
+
+.menu-panel {
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    left: 25%;
+    max-width: 300px;
+    color: @body-bg;
+    background: @menu-bg;
+    overflow: hidden;
+    padding: 1rem;
+    box-shadow: 2px 2px 6px @menu-bg;
+    opacity: 0.25;
+    transform: translatex(100%);
+    transition: all 0.3s ease-out;
+    
+    hr { margin: 0 -1rem; }
+    
+    &.open {
+      transform: translatex(0%);
+      z-index: 10;
+      opacity: 1;
+    }
+
+    .header {
+      height: @header-height;
+      font-size: 1.4rem;
+    }
+    
+    label {
+      display: block;
+      padding: 0.2rem;
+      input { margin-right: 0.5rem; }
+    }
+    .options {
+      font-size: 1rem;
+      text-align: left;
+    }
+    
+  }
+  
+  #menu-backdrop {
+    position: fixed;
+    display: none;
+    cursor: pointer;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.4);
+     &.open {
+       display: block;
+     }
+  }
 
 
 h2 { font-size: 1.4rem; }
@@ -174,9 +196,11 @@ div.day {
    }
    
    h3 { 
-     margin-top: 0.2rem;
-     margin-bottom: 0px; 
-     font-size: 1.2rem;
+     margin-top: 0.3rem;
+     margin-bottom: 0.2rem; 
+     font-size: 1.4rem;
+     font-weight: bold;
+     text-align: center;
    }
    
    h2 {
