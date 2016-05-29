@@ -1,10 +1,7 @@
 <!DOCTYPE html>
 <html lang="">
-
 <head>
-      <title>
-            AnderUnion 2016
-      </title>
+      <title>AnderUnion 2016</title>
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,31 +10,35 @@
       <!-- base url -->
       <base href="/anderunion2016/">
 <link href="main.css" rel="stylesheet"></head>
-
 <body>
+      <div class="menu menu-toggle up">
+            <span class="button">&#9776;</span>
+      </div>
       <div class="masthead">
-            <p>
-                  AnderUnion 2016
-            </p>
+            <p>AnderUnion 2016</p>
             <p class="date">July 1 - 2, 2016&nbsp;&mdash;&nbsp;Provo, UT</p>
       </div>
       <header id="header">
             AnderUnion 2016
-            <div id="main-menu" class="menu">
+            <div id="main-menu" class="menu menu-toggle">
                   <span class="button">&#9776;</span>
-                  <div class="container">
-                        <div class="options">
-                              <label><input type="checkbox" value="steve">Steve Andersen Family</label>
-                              <label><input type="checkbox" value="eric">Eric Andersen Family</label>
-                              <label><input type="checkbox" value="brad">Brad Andersen Family</label>
-                              <label><input type="checkbox" value="dave">Dave Andersen Family</label>
-                              <label><input type="checkbox" value="lisa">Lisa Andersen Family</label>
-                              <label><input type="checkbox" value="roger">Roger Andersen Family</label>
-                        </div>
-                  </div>
             </div>
-            
       </header>
+      <div id="menu-panel" class="menu-panel">
+            <div class="header">Menu</div>
+            <hr>
+            <p>Filter Responsibiities By Family</p>
+            <div class="options">
+                  <label><input type="radio" name="responsibility" value="all" checked>Everyone</label>
+                  <label><input type="radio" name="responsibility" value="steve">Steve Andersen Family</label>
+                  <label><input type="radio" name="responsibility" value="eric">Eric Andersen Family</label>
+                  <label><input type="radio" name="responsibility" value="brad">Brad Andersen Family</label>
+                  <label><input type="radio" name="responsibility" value="dave">Dave Andersen Family</label>
+                  <label><input type="radio" name="responsibility" value="lisa">Lisa Andersen Family</label>
+                  <label><input type="radio" name="responsibility" value="roger">Roger Andersen Family</label>
+            </div>
+      </div>
+      <div id="menu-backdrop" class="menu-toggle"></div>
       <div class="day">
             <h3>Friday, July 1, 2016</h3>
             <h2>Picnic at Lion’s Park</h2>
@@ -71,7 +72,7 @@
                         <li class="roger"><span>Roger Andersens&mdash;</span> Desserts</li>
                         <li class="dave"><span>Dave Andersens&mdash;</span> Clean Up</li>
                   </ul>
-                  <p>(54 Adults, 30 Children)</p>
+                  <p>(49 Adults, 30 Children)</p>
             </div>
 
       </div>
@@ -95,7 +96,7 @@
                   <div class="schedule">
                         <h4>Schedule</h4>
                         <ul>
-                              <li><span>9:00</span> Meet at the trailhead</li>
+                              <li><span>9:00</span> Meet at the <a href="https://www.google.com/maps/place/Battle+Creek+Falls/@40.3620071,-111.7038256,16.01z/data=!4m2!3m1!1s0x0:0xe728432e5232ae29?hl=en-US">trailhead</a></li>
                         </ul>
                   </div>
                   <div class="responsibilities">
@@ -125,14 +126,14 @@
                         <ul>
                               <li>Shop, eat, enjoy at Provo’s <a href="http://www.freedomfestival.org/">Freedom Festival</a></li>
                               <li>Swim, or play at Provo’s <a href="http://www.provo.org/community/recreation-center">Recreation Center</a></li>
-                              <li>Hang out at Lisa’s: children’s movies in the attic, play in the yard, chat, rest, play games, make spicy raisin bars at 2:00 with Annie and Libby.</li>
+                              <li>Hang out at Lisa’s: children’s movies in the attic, play in the yard, chat, rest, play games, make spicy raisin bars at 2:00.</li>
                         </ul>
                   </div>
                   <div class="responsibilities">
                         <h4>Responsibilities</h4>
                         <ul>
                               <li class="lisa"><span>Lisa Andersens&mdash;</span> Set up</li>
-                              <li class="steve"><span>Steve Andersens&mdash;</span> Help clean up at Lisas at 4:15 pm</li>
+                              <li class="steve"><span>Steve Andersens&mdash;</span> Help clean up Lisa's at 4:15 pm</li>
                         </ul>
                   </div>
             </div>
@@ -172,6 +173,6 @@
       </div>
 
       
-<script src="main.12f4553553fb2de0065d.bundle.js"></script></body>
+<script type="text/javascript" src="main.ff27cb18d82e214a5668.bundle.js"></script></body>
 
 </html>
